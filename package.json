@@ -1,0 +1,40 @@
+{
+  "name": "movies-explorer-api",
+  "version": "0.0.1",
+  "description": "Alt-H1\r ## **Movies-Explorer-Api**",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "lint": "npx eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arsenii400/movies-explorer-api.git"
+  },
+  "author": "Arsenii Machekhin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arsenii400/movies-explorer-api/issues"
+  },
+  "homepage": "https://github.com/Arsenii400/movies-explorer-api#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "celebrate": "^15.0.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-winston": "^4.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.2",
+    "validator": "^13.7.0",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "nodemon": "^2.0.20"
+  }
+}
