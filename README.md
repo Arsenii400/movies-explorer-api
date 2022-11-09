@@ -1,3 +1,5 @@
 # **Дипломная работа  на курсе WEB-разработчик от Яндекс Практикума**
-Alt-H1
+
 ## **Movies-Explorer-Api**
+
+Домен сервера: https://api.arsenii400.movies.nomoredomains.icu

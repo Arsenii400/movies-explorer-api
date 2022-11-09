@@ -1,7 +1,7 @@
 const allowedCors = [
   'http://localhost:3000',
   'https://localhost:3000',
-  'https://arsenii400.diploma-movies.nomoredomains.icu',
+  'https://arsenii400.movies.nomoredomains.icu',
 ];
 
 module.exports = (req, res, next) => {
