@@ -18,8 +18,9 @@ const createUser = (req, res, next) => {
     .catch((err) => {
       if (err.code === 11000) {
         next(new ConflictError('Вы пытаетесь зарегистрироваться с уже существующим в базе email'));
+      } else {
+        next(err);
       }
-      next(err);
     });
 };
 
@@ -43,8 +44,9 @@ const getUser = (req, res, next) => {
     .then((user) => {
       if (!user) {
         throw new NotFoundError('Нет пользователя с таким id');
+      } else {
+        res.send({ data: user });
       }
-      res.send({ data: user });
     })
     .catch(next);
 };
@@ -58,12 +60,15 @@ const updateUser = (req, res, next) => {
     .then((user) => {
       if (!user) {
         throw new NotFoundError('Нет пользователя с таким id');
+      } else {
+        res.send({ data: user });
       }
-      res.send({ data: user });
     })
     .catch((err) => {
       if (err.name === 'ValidationError' || err.name === 'CastError' || err.name === 'SyntaxError') {
         next(new ValidationError('«Переданы некорректные данные при обновлении профиля'));
+      } else if (err.code === 11000) {
+        next(new ConflictError('Вы пытаетесь изменить email на уже существующий в базе'));
       } else {
         next(err);
       }

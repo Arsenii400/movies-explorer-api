@@ -3,9 +3,9 @@ const {
   getUser,
   updateUser,
 } = require('../controllers/user');
-const { updateUserValidation, getUserValidation } = require('../middlewares/user-celebrate');
+const { updateUserValidation } = require('../middlewares/user-celebrate');
 
-user.get('/me', getUserValidation, getUser);
+user.get('/me', getUser);
 user.patch('/me', updateUserValidation, updateUser);
 
 module.exports = user;

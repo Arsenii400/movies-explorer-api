@@ -8,16 +8,7 @@ const method = (value, helper) => {
   } return value;
 };
 
-const getSavedMoviesValidation = celebrate({
-  headers: Joi.object().keys({
-    authorization: Joi.string().required(),
-  }).unknown(true),
-});
-
 const createMoviesValidation = celebrate({
-  headers: Joi.object().keys({
-    authorization: Joi.string().required(),
-  }).unknown(true),
   body: Joi.object().keys({
     country: Joi.string().required(),
     director: Joi.string().required(),
@@ -27,7 +18,7 @@ const createMoviesValidation = celebrate({
     image: Joi.string().required().custom(method),
     trailerLink: Joi.string().required().custom(method),
     thumbnail: Joi.string().required().custom(method),
-    movieId: Joi.string().required(),
+    movieId: Joi.number().required(),
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),
   }),
@@ -35,11 +26,8 @@ const createMoviesValidation = celebrate({
 
 const deleteMoviesByIdValidation = celebrate({
   params: Joi.object().keys({
-    _id: Joi.string().alphanum().length(24),
+    _id: Joi.string().hex().length(24),
   }),
-  headers: Joi.object().keys({
-    authorization: Joi.string().required(),
-  }).unknown(true),
 });
 
-module.exports = { createMoviesValidation, deleteMoviesByIdValidation, getSavedMoviesValidation };
+module.exports = { createMoviesValidation, deleteMoviesByIdValidation };

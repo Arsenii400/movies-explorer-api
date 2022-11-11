@@ -4,9 +4,9 @@ const {
   createMovies,
   deleteMoviesById,
 } = require('../controllers/movies');
-const { createMoviesValidation, deleteMoviesByIdValidation, getSavedMoviesValidation } = require('../middlewares/movie-celebrate');
+const { createMoviesValidation, deleteMoviesByIdValidation } = require('../middlewares/movie-celebrate');
 
-movie.get('/', getSavedMoviesValidation, getSavedMovies);
+movie.get('/', getSavedMovies);
 movie.post('/', createMoviesValidation, createMovies);
 movie.delete('/:_id', deleteMoviesByIdValidation, deleteMoviesById);
 
