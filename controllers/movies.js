@@ -41,6 +41,7 @@ const createMovies = (req, res, next) => {
     .then((movies) => res.send({ data: movies }))
     .catch((err) => {
       if (err.name === 'ValidationError') {
+        console.log(err);
         next(new ValidationError('«Переданы некорректные данные при создании карточки'));
       } else {
         next(err);

@@ -1,5 +1,5 @@
 const allowedCors = [
-  'http://localhost:3000',
+  'http://localhost:3006',
   'https://localhost:3000',
   'https://arsenii400.movies.nomoredomains.icu',
 ];

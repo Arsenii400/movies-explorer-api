@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const urlRegExp = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
+const youtubeRegExp = /https:\/\/(?:youtu\.be\/|(?:[a-z]{2,3}\.)?youtube\.com\/watch(?:\?|#\!)v=)([\w-]{11}).*/gi;
 
 const movieSchema = new mongoose.Schema({
   country: {
@@ -37,7 +38,7 @@ const movieSchema = new mongoose.Schema({
     required: true,
     validate: {
       validator(v) {
-        return urlRegExp.test(v);
+        return youtubeRegExp.test(v);
       },
     },
   },
